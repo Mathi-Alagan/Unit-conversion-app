@@ -7,6 +7,15 @@ const massEl = document.getElementById("mass-el");
 convertBtn.addEventListener("click", function () {
     console.log("clicked")
     let num = inputEl.value;
+    if (num >= 0) {
+        render(num)
+    }
+    else {
+        alert("Please enter a valid number")
+    }
+});
+
+function render(num) {
     let meterTofeet = num * 3.281;
     let feetTometer = num / 3.281;
     let literTogallon = num * 0.264;
@@ -17,7 +26,7 @@ convertBtn.addEventListener("click", function () {
     lenEl.innerHTML = `${num} meters = ${meterTofeet.toFixed(3)} feet | ${num} feet = ${feetTometer.toFixed(3)} meters`
     volumeEl.innerHTML = `${num} liters = ${literTogallon.toFixed(3)} gallons | ${num} gallons = ${gallonToliter.toFixed(3)} liters`
     massEl.innerHTML = `${num} kilos = ${kiloTopound.toFixed(3)} | ${num} pounds = ${poundTokilo.toFixed(3)} kiloss`
-});
+}
 
 
 
